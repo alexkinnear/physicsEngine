@@ -16,3 +16,15 @@ const renderBird = () => {
     context.closePath();
     context.restore();
 }
+
+const renderPolygons = () => {
+    for (let i = 0; i < gameModel.polygons.length; i++) {
+        let p = gameModel.polygons[i];
+        context.save();
+        context.beginPath();
+        context.rect(p.center.x, p.center.y, p.width, p.height);
+        context.stroke();
+        context.closePath();
+    }
+    context.restore();
+}
